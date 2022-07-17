@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 
-export const getServerSideProps = async() => {
+export const getStaticProps = async() => {
   const res = await fetch(`https://jherr-pokemon.s3.us-west-1.amazonaws.com/index.json`);
   const pokemons = await res.json();
 
