@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
@@ -30,9 +30,12 @@ export default function Home({ pokemons }) {
           <div className={styles.card} key={pokemon.id}>
             <Link href={`/pokemon/${pokemon.id}`}>
               <a>
-                <img
+                <Image
                   src={`https://jherr-pokemon.s3.us-west-1.amazonaws.com/${pokemon.image}`}
                   alt={pokemon.name}
+                  layout="intrinsic"
+                  width={1920}
+                  height={1680}
                  />
                  <h3>{pokemon.name}</h3>
               </a>

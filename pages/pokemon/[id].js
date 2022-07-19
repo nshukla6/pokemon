@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 
 import styles from "../../styles/Details.module.css";
@@ -43,10 +43,13 @@ const Detail = ({ pokemon }) => {
         <Link href="/">Back To Home</Link>
       </div>
       <div className={styles.layout}>
-        <img
+        <Image
           className={styles.picture}
           src={`https://jherr-pokemon.s3.us-west-1.amazonaws.com/${pokemon.image}`}
           alt={pokemon.name.english}
+          layout="responsive"
+          width={1920}
+          height={1680}
         />
       </div>
       <div>
